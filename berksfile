@@ -1,0 +1,2 @@
+source 'https://supermarket.chef.io'
+cookbook 'python_cookbook_AMI', git: 'git@github.com:Saraabd7/python_cookbook_AMI.git'

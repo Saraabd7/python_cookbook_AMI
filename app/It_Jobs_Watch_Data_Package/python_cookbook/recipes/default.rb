@@ -1,5 +1,5 @@
 #
-# Cookbook:: python_cookbook_AMI
+# Cookbook:: python_cookbook
 # Recipe:: default
 #
 # Copyright:: 2020, The Authors, All Rights Reserved.
@@ -79,14 +79,8 @@ end
 #   command 'pip3 install -r /home/ubuntu/app/requirements.txt'
 #   action :run
 # end
-# sudo pip3 install -r /home/vagrant/app/requirements.txt
 
-# bash 'installing app requirements' do
-#   code <<-EOH
-#     sudo pip3 install -r /home/ubuntu/app/requirements.txt
-#   EOH
-#
-bash 'installing app requirements.txt' do
+bash 'installing app requirements' do
   code <<-EOH
     pip3 install atomicwrites==1.3.0
     pip3 install attrs==19.1.0
@@ -109,54 +103,5 @@ bash 'installing app requirements.txt' do
     pip3 install urllib3==1.25.3
     pip3 install wcwidth==0.1.7
     pip3 install zipp==0.5.2
-  EOH
-end
-
-
-bash 'installing_jre' do
-  code <<-EOH
-    sudo apt-get -y install default-jre
-  EOH
-end
-bash 'install_jdk' do
-  code <<-EOH
-    sudo apt-get -y install default-jdk
-  EOH
-end
-bash 'getting key from jenkins' do
-  code <<-EOH
-    wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
-  EOH
-end
-
-bash 'getting jenkins recources' do
-  code <<-EOH
-    sudo sh -c 'echo deb https://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
-  EOH
-end
-bash 'updating source code' do
-  code <<-EOH
-    sudo apt-get update -y
-  EOH
-end
-bash 'installing jenkins' do
-    code <<-EOH
-      sudo apt-get install jenkins -y
-    EOH
-end
-
-bash 'installing_jre' do
-  code <<-EOH
-    sudo apt-get -y install default-jre
-  EOH
-end
-bash 'install_jdk' do
-  code <<-EOH
-    sudo apt-get -y install default-jdk
-  EOH
-end
-bash 'getting key from jenkins' do
-  code <<-EOH
-    wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
   EOH
 end
