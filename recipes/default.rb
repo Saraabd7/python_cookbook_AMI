@@ -75,17 +75,8 @@ directory '/home/vagrant/downloads' do
   mode '0777'
 end
 
-# execute 'install requirements' do
-#   command 'pip3 install -r /home/ubuntu/app/requirements.txt'
-#   action :run
-# end
-# sudo pip3 install -r /home/vagrant/app/requirements.txt
 
-# bash 'installing app requirements' do
-#   code <<-EOH
-#     sudo pip3 install -r /home/ubuntu/app/requirements.txt
-#   EOH
-#
+
 bash 'installing app requirements.txt' do
   code <<-EOH
     pip3 install atomicwrites==1.3.0
