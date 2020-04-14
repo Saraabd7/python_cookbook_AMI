@@ -32,8 +32,12 @@ ssh -i ~/location/of/key/key_name.pem ubuntu@xxx.xxx.xxx.xxx
 * To get access to the password input the following code:
 
 ```sudo cat /var/lib/Jenkins/secrets/initialAdminPassword
+
 ```
-```f99bbdf443534aa8a70de5bf04606060 copy the password and unlock jenkins.
+
+```
+f99bbdf443534aa8a70de5bf04606060 copy the password and unlock jenkins.
+
 ```
 ***CONGRATS! JENKINS IS SUCCESSFULLY INSTALLED!!***
 
